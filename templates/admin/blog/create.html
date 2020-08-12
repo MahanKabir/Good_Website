@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+                <form class="form-group m-0 p-0" action="{% url 'blog.create' category.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="card col-8">
+
+
+            <div class="card-header"><h1>Create</h1></div>
+            <div class="card-body">
+                <div>
+                    <label for="id_name">Name: </label>
+                    <input class="form-control" type="text" name="name" id="id_name" placeholder="Enter name...">
+                </div>
+                <div>
+                    <label for="id_type">Type: </label>
+                    <input class="form-control" type="text" name="type" id="id_type" placeholder="Enter type...">
+                </div>
+                <div>
+                    <label for="id_price">Price: </label>
+                    <input class="form-control" type="text" name="price" id="id_price" placeholder="Enter price...">
+                </div>
+                <div>
+                    <label for="id_page">Page: </label>
+                    <input class="form-control" type="text" name="page" id="id_page" placeholder="Enter page...">
+                </div>
+                <div>
+                    <label for="id_image">Image: </label>
+                    <input class="form-control" type="file" name="image" id="id_image" placeholder="Enter image...">
+                </div>
+            </div>
+            <div class="card-footer m-0 p-0"><input type="submit" class="btn btn-success col-12" value="Create"></div>
+
+        </div>
+    </div>
+</div>
+</form>
+
+{% endblock %}
